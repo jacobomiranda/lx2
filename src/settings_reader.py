@@ -6,7 +6,7 @@ import configparser
 def read_settings(ini_path: str, section: str):
     config = configparser.ConfigParser()
     config.read(ini_path)
-    options = dict(config._sections[section])
+    options = dict(config._sections[section])  # type: ignore
 
     # parse values
     for k, v in options.items():
